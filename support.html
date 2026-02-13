@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TPCD Pro - Support</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      background-color: #f8fafc;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      color: #ffffff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    header .subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-bottom: 16px;
+    }
+
+    header .company {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      padding: 4px 16px;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #475569;
+    }
+
+    a {
+      color: #6366f1;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: #ffffff;
+    }
+
+    .contact-details h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .contact-details p {
+      margin-bottom: 0;
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .contact-details a {
+      font-weight: 600;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 18px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e293b;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 20px;
+      font-weight: 300;
+      color: #94a3b8;
+      transition: transform 0.2s;
+    }
+
+    .faq-item[open] summary::after {
+      content: "\2212";
+    }
+
+    .faq-answer {
+      padding: 0 20px 18px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .faq-answer ol {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .faq-answer li {
+      margin-bottom: 4px;
+    }
+
+    /* Still need help */
+    .help-banner {
+      background: linear-gradient(135deg, #ede9fe, #dbeafe);
+      border: 1px solid #c7d2fe;
+      border-radius: 14px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .help-banner h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .help-banner p {
+      color: #475569;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .help-banner a.btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 12px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .help-banner a.btn:hover {
+      opacity: 0.9;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: #94a3b8;
+      font-size: 13px;
+      border-top: 1px solid #e2e8f0;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    footer a {
+      color: #94a3b8;
+    }
+
+    footer a:hover {
+      color: #6366f1;
+    }
+
+    footer .links {
+      margin-bottom: 10px;
+    }
+
+    footer .links a {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TPCD Pro &mdash; Support</h1>
+    <p class="subtitle">We're here to help</p>
+    <span class="company">Red Label Enterprises, Inc.</span>
+  </header>
+
+  <main>
+    <h2>Contact Us</h2>
+
+    <div class="contact-card">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <div class="contact-details">
+        <h3>Email Support</h3>
+        <p>Send us an email and we'll get back to you within 24 hours.</p>
+        <p><a href="mailto:info@redlabelinc.com">info@redlabelinc.com</a></p>
+      </div>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="faq-item">
+      <summary>How do I create a team?</summary>
+      <div class="faq-answer">
+        Go to the <strong>Settings</strong> tab and tap <strong>Create</strong> in the team section. Enter a team name and you'll receive a 6-character invite code. Share this code with your teammates so they can join.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I join a team with an invite code?</summary>
+      <div class="faq-answer">
+        Go to the <strong>Settings</strong> tab and tap <strong>Join</strong> in the team section. Enter the 6-character invite code your team admin shared with you, then tap <strong>Join Team</strong>.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I track my steps?</summary>
+      <div class="faq-answer">
+        On the <strong>Dashboard</strong>, scroll down to the <strong>Steps &amp; Activity</strong> section and tap <strong>Start Tracking Steps</strong>. Keep your phone in your pocket while walking. The app uses your device's built-in pedometer. You'll need to grant motion/activity permission when prompted.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How does the leaderboard work?</summary>
+      <div class="faq-answer">
+        The <strong>Leaderboards</strong> tab shows team rankings based on Deals (points). You can filter by Today, This Week, or All Time. Your sales activity syncs to the cloud so your team can see real-time performance. You need to be on a team to see the leaderboard with real data.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I reset my password?</summary>
+      <div class="faq-answer">
+        On the <strong>Log In</strong> screen, enter your email address and tap <strong>Forgot Password?</strong>. You'll receive a password reset code via email. Follow the instructions in the email to set a new password.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I delete my account?</summary>
+      <div class="faq-answer">
+        To request account deletion, email us at <a href="mailto:info@redlabelinc.com">info@redlabelinc.com</a> with the subject "Account Deletion Request." We will:
+        <ol>
+          <li>Delete your user profile from our database.</li>
+          <li>Remove your membership from any teams.</li>
+          <li>Delete your sales activity history.</li>
+          <li>Confirm deletion via email within 30 days.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How is my location data used?</summary>
+      <div class="faq-answer">
+        Location data is collected <strong>only</strong> while step or territory tracking is active. It's used solely to map your sales territory and calculate distance traveled. Your location is never shared with third parties or used for advertising. You can stop collection at any time by tapping <strong>Stop Tracking</strong> or by revoking location permission in your device settings.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Why aren't my steps tracking?</summary>
+      <div class="faq-answer">
+        If steps aren't counting, check the following:
+        <ol>
+          <li><strong>Permission</strong>: Make sure you've granted motion/activity permission. Go to your device Settings &gt; TPCD Pro &gt; Motion &amp; Fitness.</li>
+          <li><strong>Tracking active</strong>: Ensure you've tapped "Start Tracking Steps" on the Dashboard. The button should say "Stop Tracking Steps" when active.</li>
+          <li><strong>Device support</strong>: Some older devices or emulators don't have a pedometer. Step tracking requires a physical device with a motion sensor.</li>
+          <li><strong>Restart the app</strong>: Close and reopen TPCD Pro, then start tracking again.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I use TPCD Pro on multiple devices?</summary>
+      <div class="faq-answer">
+        Yes. Sign in with the same account on any device and your sales data will sync automatically. Note that step tracking only counts on the device you're currently carrying.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What do the conversion rates mean?</summary>
+      <div class="faq-answer">
+        Conversion rates show how effectively you move prospects through your sales funnel:
+        <ol>
+          <li><strong>T &rarr; P</strong>: Percentage of Talk-To's that become Pitches.</li>
+          <li><strong>P &rarr; C</strong>: Percentage of Pitches that become Closes.</li>
+          <li><strong>C &rarr; D</strong>: Percentage of Closes that become Deals.</li>
+        </ol>
+        Higher percentages indicate stronger conversion at each stage.
+      </div>
+    </details>
+
+    <div class="help-banner">
+      <h3>Still need help?</h3>
+      <p>Our support team typically responds within 24 hours.</p>
+      <a class="btn" href="mailto:info@redlabelinc.com">Email Support</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="links">
+      <a href="./index.html">Privacy Policy</a>
+      <a href="./support.html">Support</a>
+    </div>
+    &copy; 2026 Red Label Enterprises, Inc. All rights reserved.
+  </footer>
+</body>
+</html>
